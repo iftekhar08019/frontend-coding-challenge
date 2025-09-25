@@ -53,7 +53,7 @@ export default function Stepper({ steps, currentStep, maxStepsPerRow = 4 }: Step
                   {/* Horizontal line between steps in the same row only */}
                   {stepIndex < rowSteps.length - 1 && (
                     <div
-                      className={`absolute left-[66%] lg:left-[62.7%] top-1/2 -translate-y-1/2 w-full lg:h-[6px] h-[4px] -z-10
+                      className={`absolute left-[62.7%] top-1/2 -translate-y-1/2 w-full lg:h-[6px] h-[4px] -z-10
                         ${currentStep > stepNumber ? "bg-blue-600" : "bg-gray-200"}
                       `}
                     />
