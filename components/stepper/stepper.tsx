@@ -28,7 +28,7 @@ export default function Stepper({ steps, currentStep, maxStepsPerRow = 4 }: Step
                 <li key={globalStepIndex} className="flex items-center justify-center relative flex-1">
                   {/* Circle */}
                   <div
-                    className={`flex items-center justify-center lg:w-10 lg:h-10 w-[30px] h-[30px] rounded-full z-10 font-semibold
+                    className={`flex items-center justify-center lg:w-10 lg:h-10 w-[30px] h-[30px] rounded-full -z-10 font-semibold
                       ${isCompleted ? "bg-blue-600 text-white" : "bg-gray-200"}
                       ${isActive ? "border-2 border-blue-600 text-white" : ""}
                       ${
@@ -53,7 +53,7 @@ export default function Stepper({ steps, currentStep, maxStepsPerRow = 4 }: Step
                   {/* Horizontal line between steps in the same row only */}
                   {stepIndex < rowSteps.length - 1 && (
                     <div
-                      className={`absolute left-1/2 w-full lg:h-[6px] h-[4px] -z-10
+                      className={`absolute left-[66%] lg:left-[62.7%] top-1/2 -translate-y-1/2 w-full lg:h-[6px] h-[4px] -z-10
                         ${currentStep > stepNumber ? "bg-blue-600" : "bg-gray-200"}
                       `}
                     />
