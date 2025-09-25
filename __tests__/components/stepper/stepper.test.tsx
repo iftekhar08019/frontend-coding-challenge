@@ -49,4 +49,21 @@ describe("Stepper", () => {
 		// next step is gray
 		expect(upcoming.className).toContain("bg-gray-200");
 	});
+
+	it("splits steps into multiple rows when exceeding maxStepsPerRow", () => {
+		const sixSteps = [
+			{ title: "One" },
+			{ title: "Two" },
+			{ title: "Three" },
+			{ title: "Four" },
+			{ title: "Five" },
+			{ title: "Six" },
+		];
+		render(<Stepper steps={sixSteps} currentStep={1} maxStepsPerRow={4} />);
+		// There should be two ordered lists (two rows)
+		const lists = document.querySelectorAll("ol");
+		expect(lists.length).toBe(2);
+		// All step numbers should be present
+		["1", "2", "3", "4", "5", "6"].forEach((n) => screen.getByText(n));
+	});
 });

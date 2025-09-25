@@ -3,9 +3,8 @@ export interface Step {
 }
 
 export const steps: Step[] = [
-	{ title: "Fahrzeug" },
-	{ title: "Termin" },
-	{ title: "Fahrzeug" },
-	{ title: "Kontakt" },
-	
+  { title: "Fahrzeug" },
+  { title: "Termin" },
+  { title: "Kontakt" },
+  { title: "Fertig" },
 ];
