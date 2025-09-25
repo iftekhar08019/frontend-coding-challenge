@@ -8,19 +8,20 @@ import { steps } from "../components/stepper/steps";
 import useStepper from "../hooks/useStepper";
 
 export default function Home() {
-	const { currentStep, handleNextStep } = useStepper();
-	return (
-		<>
-			<Header />
-			<MainWrapper>
-				<StepperWrapper>
-					{/*TODO: Make sure the Stepper handles clicks on the button*/}
-					<Stepper steps={steps} currentStep={currentStep} />
-				</StepperWrapper>
-				<ButtonWrapper>
-					<Button onClick={handleNextStep}>Next</Button>
-				</ButtonWrapper>
-			</MainWrapper>
-		</>
-	);
+  const { currentStep, handleNextStep } = useStepper();
+  const isLastStep = currentStep === steps.length;
+
+  return (
+    <>
+      <Header />
+      <MainWrapper>
+        <StepperWrapper>
+          <Stepper steps={steps} currentStep={currentStep} />
+        </StepperWrapper>
+        <ButtonWrapper>
+          {!isLastStep && <Button onClick={handleNextStep}>Next</Button>}
+        </ButtonWrapper>
+      </MainWrapper>
+    </>
+  );
 }
