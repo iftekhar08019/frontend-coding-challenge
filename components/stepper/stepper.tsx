@@ -7,8 +7,8 @@ interface StepperProps {
 
 export default function Stepper({ steps, currentStep }: StepperProps) {
   return (
-    <div className="flex items-center justify-center w-full">
-      <ol className="flex items-center w-full max-w-md">
+    <div className="flex items-center justify-center ">
+      <ol className="flex items-center  w-[424px] lg:h-[132px] h-[80px] px-4 lg:py-8 py-4">
         {steps.map((step, index) => {
           const stepNumber = index + 1;
           const isCompleted = stepNumber <= currentStep; 
