@@ -54,7 +54,7 @@ export default function Stepper({ steps, currentStep, maxStepsPerRow = 4 }: Step
                   {stepIndex < rowSteps.length - 1 && (
                     <div
                       className={`absolute left-1/2 w-full lg:h-[6px] h-[4px] -z-10
-                        ${isCompleted && (globalStepIndex + 1) <= currentStep ? "bg-blue-600" : "bg-gray-200"}
+                        ${currentStep > stepNumber ? "bg-blue-600" : "bg-gray-200"}
                       `}
                     />
                   )}
